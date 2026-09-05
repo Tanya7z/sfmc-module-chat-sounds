@@ -1,0 +1,7 @@
+{
+  "cooldown_ticks": 200,
+  "rules": [
+    { "keyword": "ciallo", "sound": "random.levelup", "volume": 1.0, "pitch": 1.0 },
+    { "keyword": "baka", "sound": "mob.villager.no", "volume": 1.0, "pitch": 1.2 }
+  ]
+}

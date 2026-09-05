@@ -1,0 +1,21 @@
+{
+  "$schema": "https://cdn.jsdelivr.net/gh/DogeLakeDev/ScriptsForMinecraftServer@latest/modules/sdk/%40sfmc-sdk/schemas/sapi-manifest.v2.schema.json",
+  "schemaVersion": 2,
+  "id": "chat-sounds",
+  "name": "聊天关键字音效",
+  "configKey": "chat_sounds",
+  "enabledByDefault": true,
+  "canDisable": true,
+  "requires": ["chat"],
+  "permissions": [
+    "config:read:chat_sounds",
+    "service:chat.onMessage"
+  ],
+  "services": {
+    "provides": [],
+    "requires": [
+      { "name": "chat.onMessage" }
+    ]
+  },
+  "notes": "经 chat.onMessage 观察者匹配关键词并全服播音；生存 200 ticks 冷却，创造豁免；禁裸听 chatSend。"
+}
