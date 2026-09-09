@@ -5,7 +5,10 @@
  */
 
 import { GameMode, system, world, type Player } from "@minecraft/server";
-import { ModuleRegistry, type ModuleServices } from "@sfmc-bds/sdk/module-loader";
+import {
+  ModuleRegistry,
+  type ModuleServices,
+} from "@sfmc-bds/sdk/module-loader";
 import { config } from "@sfmc-bds/sdk/sapi/config";
 import { service } from "@sfmc-bds/sdk/sapi/service";
 import { debug } from "@sfmc-bds/sdk/sapi/runtime";
@@ -59,7 +62,10 @@ function handleChatMessage(ctx: { player: Player; message: string }): void {
       // 冷却中：仅放行聊天文本，不触发全服音效
       return;
     }
-    cooldownUntil.set(player.id, nextExpireTick(now, runtimeConfig.cooldownTicks));
+    cooldownUntil.set(
+      player.id,
+      nextExpireTick(now, runtimeConfig.cooldownTicks),
+    );
   }
 
   playSoundForAll(rule);
@@ -112,9 +118,6 @@ ModuleRegistry.register({
   lifecycle: {
     registerPermissions() {
       // 无独立命令面
-    },
-    registerCommands() {
-      // 无
     },
     registerEvents(services) {
       // 规格要求：在 registerEvents 挂接 chat.onMessage（严禁裸听 chatSend）
