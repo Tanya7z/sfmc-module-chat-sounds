@@ -7,9 +7,9 @@ Wave C official SFMC module: **chat-sounds**（聊天关键字全服音效）.
 ## Develop
 
 ```bash
-npm install
-npm run typecheck
-npm test
+pnpm install
+pnpm run typecheck
+pnpm run test
 ```
 
 Install into platform:
